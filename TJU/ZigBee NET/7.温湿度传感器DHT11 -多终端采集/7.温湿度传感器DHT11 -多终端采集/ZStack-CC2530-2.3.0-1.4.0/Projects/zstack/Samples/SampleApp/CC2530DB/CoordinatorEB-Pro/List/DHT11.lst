@@ -1,0 +1,903 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         29/Dec/2016  23:52:02 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DH #
+#                          T11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\Source\DHT11.c               #
+#    Command line       =  -f "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸Ð #
+#                          Æ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11            #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC25 #
+#                          30DB\f8wCoord.cfg" (-DCPU32MHZ -DROOT=__near_func  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC25 #
+#                          30DB\f8wConfig.cfg" (-DSECURE=0                    #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\Source\DHT11.c" -D           #
+#                          ZIGBEEPRO -D ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC  #
+#                          -D xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D HAL_ADC  #
+#                          -lC "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ #
+#                          ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11           #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\CoordinatorEB-Pro\L #
+#                          ist\" -lA "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊ #
+#                          ª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11     #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\CoordinatorEB-Pro\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o               #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\CoordinatorEB-Pro\O #
+#                          bj\" -e --debug --core=plain --dptr=16,1           #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸Ð #
+#                          Æ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11            #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\" -I                #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\SOURCE\" -I      #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\ZMAIN\TI25 #
+#                          30DB\" -I "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊ #
+#                          ª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11     #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\MT\" -I "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\ #
+#                          7.ÎÂÊª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT1 #
+#                          1 -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\..\..\CO #
+#                          MPONENTS\HAL\INCLUDE\" -I                          #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\HAL\TARGET\CC2530EB\" -I                    #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\OSAL\MCU\CCSOC\" -I                         #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\OSAL\INCLUDE\" -I                           #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\AF\" -I "I:\BaiduNetdiskDownload\5×éÍ #
+#                          øÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                          #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\NWK\" -I "I:\BaiduNetdiskDownload\5×é #
+#                          ÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                         #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\SEC\" -I "I:\BaiduNetdiskDownload\5×é #
+#                          ÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                         #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\SAPI\" -I "I:\BaiduNetdiskDownload\5× #
+#                          éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                        #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\SYS\" -I "I:\BaiduNetdiskDownload\5×é #
+#                          ÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                         #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\ZDO\" -I "I:\BaiduNetdiskDownload\5×é #
+#                          ÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                         #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\F8W\" -I "I:\BaiduNetdiskDownload\5×éÍ #
+#                          øÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                          #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\" -I "I:\BaiduNetdiskDownload\5×éÍøÊµÑ #
+#                          é\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DH #
+#                          T11 -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          COMPONENTS\SERVICES\SADDR\" -I                     #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\SERVICES\SDATA\" -I                         #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\MAC\INCLUDE\" -I "I:\BaiduNetdiskDownload\5 #
+#                          ×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                       #
+#                          -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                    #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\MAC\HIGH_LEVEL\" -I                         #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\MAC\LOW_LEVEL\srf04\" -I                    #
+#                          "I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷D #
+#                          HT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11               #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\" -Ohz      #
+#    List file          =  I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DH #
+#                          T11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\CoordinatorEB-Pro\L #
+#                          ist\DHT11.lst                                      #
+#    Object file        =  I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DH #
+#                          T11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11                #
+#                          -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\CoordinatorEB-Pro\O #
+#                          bj\DHT11.r51                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+I:\BaiduNetdiskDownload\5×éÍøÊµÑé\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\7.ÎÂÊª¶È´«¸ÐÆ÷DHT11 -¶àÖÕ¶Ë²É¼¯\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source\DHT11.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "OnBoard.h"
+      3          
+      4          typedef unsigned char uchar;
+      5          typedef unsigned int  uint;
+      6          
+      7          #define DATA_PIN P0_7
+      8          
+      9          void Delay_us(void);
+     10          void Delay_10us(void);
+     11          void Delay_ms(uint Time);
+     12          void COM(void);
+     13          void DHT11(void);
+     14          
+     15          //ÎÂÊª¶È¶¨Òå
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          uchar ucharFLAG,uchartemp;
+   \                     ucharFLAG:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uchartemp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     17          uchar shidu_shi,shidu_ge,shidu_p,wendu_shi,wendu_ge,wendu_p;
+   \                     shidu_shi:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     shidu_ge:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     shidu_p:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     wendu_shi:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     wendu_ge:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     wendu_p:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     18          uchar ucharT_data_H,ucharT_data_L,ucharRH_data_H,ucharRH_data_L,ucharcheckdata;
+   \                     ucharT_data_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharT_data_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharRH_data_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharRH_data_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharcheckdata:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     19          uchar ucharT_data_H_temp,ucharT_data_L_temp,ucharRH_data_H_temp,ucharRH_data_L_temp,ucharcheckdata_temp;
+   \                     ucharT_data_H_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharT_data_L_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharRH_data_H_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharRH_data_L_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ucharcheckdata_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     20          uchar ucharcomdata;
+   \                     ucharcomdata:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     21          
+     22          //ÑÓÊ±º¯Êý
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void Delay_us(void) //1 usÑÓÊ±
+   \                     Delay_us:
+     24          {   asm("nop");
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   00           nop
+     25              asm("nop");
+   \   000001   00           nop
+     26              asm("nop");
+   \   000002   00           nop
+     27              asm("nop");
+   \   000003   00           nop
+     28           //   asm("nop");    
+     29             // asm("nop");
+     30            
+     31          }
+   \   000004   02....       LJMP    ?BRET
+     32          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void Delay_10us(void) //10 usÑÓÊ±
+   \                     Delay_10us:
+     34          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     35            Delay_us();
+   \   000004                ; Setup parameters for call to function Delay_us
+   \   000004   12....       LCALL   ?Subroutine2 & 0xFFFF
+     36            Delay_us();
+     37            Delay_us();
+     38            Delay_us();
+     39            Delay_us();
+     40            Delay_us();
+   \                     ??CrossCallReturnLabel_0:
+   \   000007                ; Setup parameters for call to function Delay_us
+   \   000007   12....       LCALL   ?Subroutine2 & 0xFFFF
+     41            Delay_us();
+     42            Delay_us();
+     43            Delay_us();
+     44            Delay_us(); 
+     45          }
+   \                     ??CrossCallReturnLabel_1:
+   \   00000A   D083         POP     DPH
+   \   00000C   D082         POP     DPL
+   \   00000E   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??Delay_us?relay
+   \   000003                ; Setup parameters for call to function Delay_us
+   \   000003                ; Setup parameters for call to function Delay_us
+   \   000003   12....       LCALL   ??Delay_us?relay
+   \   000006                ; Setup parameters for call to function Delay_us
+   \   000006                ; Setup parameters for call to function Delay_us
+   \   000006   12....       LCALL   ??Delay_us?relay
+   \   000009                ; Setup parameters for call to function Delay_us
+   \   000009                ; Setup parameters for call to function Delay_us
+   \   000009   12....       LCALL   ??Delay_us?relay
+   \   00000C                ; Setup parameters for call to function Delay_us
+   \   00000C                ; Setup parameters for call to function Delay_us
+   \   00000C   12....       LCALL   ??Delay_us?relay
+   \   00000F   22           RET
+     46          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          void Delay_ms(uint Time)//n msÑÓÊ±
+   \                     Delay_ms:
+     48          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     49            unsigned char i;
+     50            while(Time--)
+   \                     ??Delay_ms_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   1E           DEC     R6
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   600E         JZ      ??Delay_ms_1
+     51            {
+     52              for(i=0;i<100;i++)
+   \   000019   75..64       MOV     ?V0 + 0,#0x64
+     53               Delay_10us();
+   \                     ??Delay_ms_2:
+   \   00001C                ; Setup parameters for call to function Delay_10us
+   \   00001C   12....       LCALL   ??Delay_10us?relay
+   \   00001F   15..         DEC     ?V0 + 0
+   \   000021   E5..         MOV     A,?V0 + 0
+   \   000023   60E4         JZ      ??Delay_ms_0
+   \   000025   80F5         SJMP    ??Delay_ms_2
+     54            }
+     55          }
+   \                     ??Delay_ms_1:
+   \   000027                REQUIRE ?Subroutine0
+   \   000027                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     56          
+     57          //ÎÂÊª¶È´«¸Ð
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          void COM(void)    // ÎÂÊªÐ´Èë
+   \                     COM:
+     59          {     
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     60              uchar i;         
+     61              for(i=0;i<8;i++)    
+   \   000005   7E08         MOV     R6,#0x8
+     62              {
+     63                  ucharFLAG=2; 
+   \                     ??COM_0:
+   \   000007   90....       MOV     DPTR,#ucharFLAG
+   \   00000A   7402         MOV     A,#0x2
+   \   00000C   F0           MOVX    @DPTR,A
+     64                  while((DATA_PIN==0)&&ucharFLAG++);
+   \                     ??COM_1:
+   \   00000D   A287         MOV     C,0x80.7
+   \   00000F   4005         JC      ??COM_2
+   \   000011   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000014   70F7         JNZ     ??COM_1
+     65                   MicroWait(37);
+   \                     ??COM_2:
+   \   000016                ; Setup parameters for call to function Onboard_wait
+   \   000016   7A25         MOV     R2,#0x25
+   \   000018   7B00         MOV     R3,#0x0
+   \   00001A   12....       LCALL   ??Onboard_wait?relay
+     66                  uchartemp=0;
+   \   00001D   90....       MOV     DPTR,#uchartemp
+   \   000020   E4           CLR     A
+   \   000021   F0           MOVX    @DPTR,A
+     67                  if(DATA_PIN==1)uchartemp=1;
+   \   000022   A287         MOV     C,0x80.7
+   \   000024   5002         JNC     ??COM_3
+   \   000026   04           INC     A
+   \   000027   F0           MOVX    @DPTR,A
+     68                  ucharFLAG=2;
+   \                     ??COM_3:
+   \   000028   90....       MOV     DPTR,#ucharFLAG
+   \   00002B   7402         MOV     A,#0x2
+   \   00002D   F0           MOVX    @DPTR,A
+     69                  while((DATA_PIN==1)&&ucharFLAG++);   
+   \                     ??COM_4:
+   \   00002E   A287         MOV     C,0x80.7
+   \   000030   5005         JNC     ??COM_5
+   \   000032   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000035   70F7         JNZ     ??COM_4
+     70                //  if(ucharFLAG==1)break;    
+     71                  ucharcomdata<<=1;
+     72                  ucharcomdata|=uchartemp; 
+   \                     ??COM_5:
+   \   000037   90....       MOV     DPTR,#uchartemp
+   \   00003A   C082         PUSH    DPL
+   \   00003C   90....       MOV     DPTR,#ucharcomdata
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   C3           CLR     C
+   \   000041   33           RLC     A
+   \   000042   7583..       MOV     DPH,#(uchartemp >> 8) & 0xff
+   \   000045   D082         POP     DPL
+   \   000047   F8           MOV     R0,A
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   48           ORL     A,R0
+   \   00004A   90....       MOV     DPTR,#ucharcomdata
+   \   00004D   F0           MOVX    @DPTR,A
+     73              }    
+   \   00004E   1E           DEC     R6
+   \   00004F   EE           MOV     A,R6
+   \   000050   70B5         JNZ     ??COM_0
+     74          }
+   \   000052   80..         SJMP    ?Subroutine0
+   \   000054                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   7401         MOV     A,#0x1
+   \   000004   28           ADD     A,R0
+   \   000005   F0           MOVX    @DPTR,A
+   \   000006   E8           MOV     A,R0
+   \   000007   22           RET
+     75          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     76          void DHT11(void)   //ÎÂÊª´«¸ÐÆô¶¯
+   \                     DHT11:
+     77          {   P0DIR |= 0x80; //IO¿ÚÐèÒªÖØÐÂÅäÖÃ
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   43FD80       ORL     0xfd,#0x80
+     78              DATA_PIN=0;
+   \   000008   C287         CLR     0x80.7
+     79               MicroWait(2000); 
+   \   00000A                ; Setup parameters for call to function Onboard_wait
+   \   00000A   7AD0         MOV     R2,#-0x30
+   \   00000C   7B07         MOV     R3,#0x7
+   \   00000E   12....       LCALL   ??Onboard_wait?relay
+     80              DATA_PIN=1; 
+   \   000011   D287         SETB    0x80.7
+     81              P0DIR &=0x7f; //ÖØÐÂÅäÖÃIO¿Ú·½Ïò
+   \   000013   53FD7F       ANL     0xfd,#0x7f
+     82              MicroWait(35); 
+   \   000016                ; Setup parameters for call to function Onboard_wait
+   \   000016   7A23         MOV     R2,#0x23
+   \   000018   7B00         MOV     R3,#0x0
+   \   00001A   12....       LCALL   ??Onboard_wait?relay
+     83             // Delay_10us();  
+     84              if(DATA_PIN==0) 
+   \   00001D   A287         MOV     C,0x80.7
+   \   00001F   5003         JNC     $+5
+   \   000021   02....       LJMP    ??DHT11_0 & 0xFFFF
+     85              {
+     86                  ucharFLAG=2; 
+   \   000024   90....       MOV     DPTR,#ucharFLAG
+   \   000027   7402         MOV     A,#0x2
+   \   000029   F0           MOVX    @DPTR,A
+     87                  while((DATA_PIN==0)&&ucharFLAG++);
+   \                     ??DHT11_1:
+   \   00002A   A287         MOV     C,0x80.7
+   \   00002C   4005         JC      ??DHT11_2
+   \   00002E   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000031   70F7         JNZ     ??DHT11_1
+     88                  ucharFLAG=2;
+   \                     ??DHT11_2:
+   \   000033   7402         MOV     A,#0x2
+   \   000035   F0           MOVX    @DPTR,A
+     89                  while((DATA_PIN==1)&&ucharFLAG++); 
+   \                     ??DHT11_3:
+   \   000036   A287         MOV     C,0x80.7
+   \   000038   5005         JNC     ??DHT11_4
+   \   00003A   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00003D   70F7         JNZ     ??DHT11_3
+     90                  COM();
+   \                     ??DHT11_4:
+   \   00003F                ; Setup parameters for call to function COM
+   \   00003F   12....       LCALL   ??Subroutine6_0 & 0xFFFF
+     91                  ucharRH_data_H_temp=ucharcomdata;
+   \                     ??CrossCallReturnLabel_14:
+   \   000042   90....       MOV     DPTR,#ucharRH_data_H_temp
+   \   000045   12....       LCALL   ?Subroutine1 & 0xFFFF
+     92                  COM();
+     93                  ucharRH_data_L_temp=ucharcomdata;
+   \                     ??CrossCallReturnLabel_10:
+   \   000048   90....       MOV     DPTR,#ucharRH_data_L_temp
+   \   00004B   12....       LCALL   ?Subroutine1 & 0xFFFF
+     94                  COM();
+     95                  ucharT_data_H_temp=ucharcomdata;
+   \                     ??CrossCallReturnLabel_11:
+   \   00004E   90....       MOV     DPTR,#ucharT_data_H_temp
+   \   000051   12....       LCALL   ?Subroutine1 & 0xFFFF
+     96                  COM();
+     97                  ucharT_data_L_temp=ucharcomdata;
+   \                     ??CrossCallReturnLabel_12:
+   \   000054   90....       MOV     DPTR,#ucharT_data_L_temp
+   \   000057   12....       LCALL   ?Subroutine1 & 0xFFFF
+     98                  COM();
+     99                  ucharcheckdata_temp=ucharcomdata;
+   \                     ??CrossCallReturnLabel_13:
+   \   00005A   90....       MOV     DPTR,#ucharcheckdata_temp
+   \   00005D   F0           MOVX    @DPTR,A
+    100                  DATA_PIN=1; 
+   \   00005E   D287         SETB    0x80.7
+    101                  uchartemp=(ucharT_data_H_temp+ucharT_data_L_temp+ucharRH_data_H_temp+ucharRH_data_L_temp);
+   \   000060   90....       MOV     DPTR,#ucharRH_data_L_temp
+   \   000063   C082         PUSH    DPL
+   \   000065   C083         PUSH    DPH
+   \   000067   90....       MOV     DPTR,#ucharRH_data_H_temp
+   \   00006A   C082         PUSH    DPL
+   \   00006C   C083         PUSH    DPH
+   \   00006E   90....       MOV     DPTR,#ucharT_data_L_temp
+   \   000071   C082         PUSH    DPL
+   \   000073   90....       MOV     DPTR,#ucharT_data_H_temp
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   7583..       MOV     DPH,#(ucharT_data_L_temp >> 8) & 0xff
+   \   00007A   D082         POP     DPL
+   \   00007C   F8           MOV     R0,A
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   28           ADD     A,R0
+   \   00007F   D083         POP     DPH
+   \   000081   D082         POP     DPL
+   \   000083   F8           MOV     R0,A
+   \   000084   E0           MOVX    A,@DPTR
+   \   000085   28           ADD     A,R0
+   \   000086   D083         POP     DPH
+   \   000088   D082         POP     DPL
+   \   00008A   F8           MOV     R0,A
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   28           ADD     A,R0
+   \   00008D   90....       MOV     DPTR,#uchartemp
+   \   000090   F0           MOVX    @DPTR,A
+    102                  if(uchartemp==ucharcheckdata_temp)
+   \   000091   F8           MOV     R0,A
+   \   000092   90....       MOV     DPTR,#ucharcheckdata_temp
+   \   000095   E0           MOVX    A,@DPTR
+   \   000096   68           XRL     A,R0
+   \   000097   7028         JNZ     ??DHT11_5
+    103                  {
+    104                      ucharRH_data_H=ucharRH_data_H_temp;
+   \   000099   90....       MOV     DPTR,#ucharRH_data_H_temp
+   \   00009C   E0           MOVX    A,@DPTR
+   \   00009D   90....       MOV     DPTR,#ucharRH_data_H
+   \   0000A0   F0           MOVX    @DPTR,A
+    105                      ucharRH_data_L=ucharRH_data_L_temp;
+   \   0000A1   90....       MOV     DPTR,#ucharRH_data_L_temp
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   90....       MOV     DPTR,#ucharRH_data_L
+   \   0000A8   F0           MOVX    @DPTR,A
+    106                      ucharT_data_H=ucharT_data_H_temp;
+   \   0000A9   90....       MOV     DPTR,#ucharT_data_H_temp
+   \   0000AC   E0           MOVX    A,@DPTR
+   \   0000AD   90....       MOV     DPTR,#ucharT_data_H
+   \   0000B0   F0           MOVX    @DPTR,A
+    107                      ucharT_data_L=ucharT_data_L_temp;
+   \   0000B1   90....       MOV     DPTR,#ucharT_data_L_temp
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   90....       MOV     DPTR,#ucharT_data_L
+   \   0000B8   F0           MOVX    @DPTR,A
+    108                      ucharcheckdata=ucharcheckdata_temp;
+   \   0000B9   90....       MOV     DPTR,#ucharcheckdata_temp
+   \   0000BC   E0           MOVX    A,@DPTR
+   \   0000BD   90....       MOV     DPTR,#ucharcheckdata
+   \   0000C0   F0           MOVX    @DPTR,A
+    109                  }
+    110                  wendu_shi=(ucharT_data_H*256+ucharT_data_L)/100; 
+   \                     ??DHT11_5:
+   \   0000C1   90....       MOV     DPTR,#ucharT_data_H
+   \   0000C4   E0           MOVX    A,@DPTR
+   \   0000C5   F9           MOV     R1,A
+   \   0000C6   90....       MOV     DPTR,#ucharT_data_L
+   \   0000C9   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   0000CC   12....       LCALL   ?S_DIV_MOD
+   \   0000CF   E8           MOV     A,R0
+   \   0000D0   90....       MOV     DPTR,#wendu_shi
+   \   0000D3   12....       LCALL   ?Subroutine5 & 0xFFFF
+    111                  wendu_ge=(ucharT_data_H*256+ucharT_data_L)/10%10;
+   \                     ??CrossCallReturnLabel_8:
+   \   0000D6   12....       LCALL   ?S_DIV_MOD
+   \   0000D9   88..         MOV     ?V0 + 0,R0
+   \   0000DB   7A0A         MOV     R2,#0xa
+   \   0000DD   7B00         MOV     R3,#0x0
+   \   0000DF   12....       LCALL   ?S_DIV_MOD
+   \   0000E2   EA           MOV     A,R2
+   \   0000E3   90....       MOV     DPTR,#wendu_ge
+   \   0000E6   F0           MOVX    @DPTR,A
+    112                  wendu_p =(ucharT_data_H*256+ucharT_data_L)/10; 
+   \   0000E7   E5..         MOV     A,?V0 + 0
+   \   0000E9   90....       MOV     DPTR,#wendu_p
+   \   0000EC   F0           MOVX    @DPTR,A
+    113                  shidu_shi=(ucharRH_data_H*256+ucharRH_data_L)/100; 
+   \   0000ED   90....       MOV     DPTR,#ucharRH_data_H
+   \   0000F0   E0           MOVX    A,@DPTR
+   \   0000F1   F9           MOV     R1,A
+   \   0000F2   90....       MOV     DPTR,#ucharRH_data_L
+   \   0000F5   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000F8   12....       LCALL   ?S_DIV_MOD
+   \   0000FB   E8           MOV     A,R0
+   \   0000FC   90....       MOV     DPTR,#shidu_shi
+   \   0000FF   12....       LCALL   ?Subroutine5 & 0xFFFF
+    114                  shidu_ge=(ucharRH_data_H*256+ucharRH_data_L)/10%10;  
+   \                     ??CrossCallReturnLabel_9:
+   \   000102   12....       LCALL   ?S_DIV_MOD
+   \   000105   88..         MOV     ?V0 + 0,R0
+   \   000107   7A0A         MOV     R2,#0xa
+   \   000109   7B00         MOV     R3,#0x0
+   \   00010B   12....       LCALL   ?S_DIV_MOD
+   \   00010E   EA           MOV     A,R2
+   \   00010F   90....       MOV     DPTR,#shidu_ge
+   \   000112   F0           MOVX    @DPTR,A
+    115                  shidu_p = (ucharRH_data_H*256+ucharRH_data_L)/10;  
+   \   000113   E5..         MOV     A,?V0 + 0
+   \   000115   8015         SJMP    ??DHT11_6
+    116              } 
+    117              else //Ã»ÓÃ³É¹¦¶ÁÈ¡£¬·µ»Ø0
+    118              {
+    119                  wendu_shi=0; 
+   \                     ??DHT11_0:
+   \   000117   90....       MOV     DPTR,#wendu_shi
+   \   00011A   E4           CLR     A
+   \   00011B   F0           MOVX    @DPTR,A
+    120                  wendu_ge=0;
+   \   00011C   90....       MOV     DPTR,#wendu_ge
+   \   00011F   F0           MOVX    @DPTR,A
+    121                  wendu_p=0;
+   \   000120   90....       MOV     DPTR,#wendu_p
+   \   000123   F0           MOVX    @DPTR,A
+    122                  shidu_shi=0; 
+   \   000124   90....       MOV     DPTR,#shidu_shi
+   \   000127   F0           MOVX    @DPTR,A
+    123                  shidu_ge=0;
+   \   000128   90....       MOV     DPTR,#shidu_ge
+   \   00012B   F0           MOVX    @DPTR,A
+    124                  shidu_p=0;
+   \                     ??DHT11_6:
+   \   00012C   90....       MOV     DPTR,#shidu_p
+   \   00012F   F0           MOVX    @DPTR,A
+    125                  
+    126              } 
+    127              
+    128              P0DIR |= 0x80; //IO¿ÚÐèÒªÖØÐÂÅäÖÃ 
+   \   000130   43FD80       ORL     0xfd,#0x80
+    129          }
+   \   000133   7F02         MOV     R7,#0x2
+   \   000135   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000138                REQUIRE P0DIR
+   \   000138                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   EC           MOV     A,R4
+   \   000002   F8           MOV     R0,A
+   \   000003   ED           MOV     A,R5
+   \   000004   F9           MOV     R1,A
+   \   000005   7A0A         MOV     R2,#0xa
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FC           MOV     R4,A
+   \   000002   E9           MOV     A,R1
+   \   000003   FD           MOV     R5,A
+   \   000004   EC           MOV     A,R4
+   \   000005   F8           MOV     R0,A
+   \   000006   7A64         MOV     R2,#0x64
+   \   000008   7B00         MOV     R3,#0x0
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                REQUIRE ??Subroutine6_0
+   \   000001                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   12....       LCALL   ??COM?relay
+   \   000003   90....       MOV     DPTR,#ucharcomdata
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??COM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    COM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DHT11?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DHT11
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     COM                   2      0     19
+       -> Onboard_wait     0      0     18
+     DHT11                 6      0     10
+       -> Onboard_wait     0      0     20
+       -> Onboard_wait     0      0     20
+       -> COM              0      0     20
+       -> COM              0      0     20
+       -> COM              0      0     20
+       -> COM              0      0     20
+       -> COM              0      0     20
+     Delay_10us            2      0      9
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+       -> Delay_us         4      0      0
+     Delay_ms              0      0      9
+       -> Delay_10us       0      0     18
+     Delay_us              0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     _A_P0                  1
+     P0DIR                  1
+     ucharFLAG              1
+     uchartemp              1
+     shidu_shi              1
+     shidu_ge               1
+     shidu_p                1
+     wendu_shi              1
+     wendu_ge               1
+     wendu_p                1
+     ucharT_data_H          1
+     ucharT_data_L          1
+     ucharRH_data_H         1
+     ucharRH_data_L         1
+     ucharcheckdata         1
+     ucharT_data_H_temp     1
+     ucharT_data_L_temp     1
+     ucharRH_data_H_temp    1
+     ucharRH_data_L_temp    1
+     ucharcheckdata_temp    1
+     ucharcomdata           1
+     Delay_us               7
+     Delay_10us            17
+     ?Subroutine2          16
+     Delay_ms              39
+     ?Subroutine0           5
+     COM                   84
+     ?Subroutine3           8
+     DHT11                312
+     ?Subroutine5          10
+     ?Subroutine4          11
+     ?Subroutine1           1
+     ??Subroutine6_0        8
+     ??Delay_us?relay       6
+     ??Delay_10us?relay     6
+     ??Delay_ms?relay       6
+     ??COM?relay            6
+     ??DHT11?relay          6
+
+ 
+ 518 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+  19 bytes in segment XDATA_Z
+ 
+ 548 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+  19 bytes of XDATA memory
+
+Errors: none
+Warnings: none
